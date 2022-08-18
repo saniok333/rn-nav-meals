@@ -6,17 +6,18 @@ import { CATEGORIES } from '../data/dummy-data';
 const CategoriesScreen = ({ navigation }) => {
   const renderCategoryItem = (itemData) => {
     const {
-      item: { title, color },
+      item: { title, color, id },
     } = itemData;
 
     const onPressHandler = () => {
-      navigation.navigate('MealsOverview');
+      navigation.navigate('MealsOverview', { categoryId: id });
     };
 
     return (
       <CategoryGridTile title={title} color={color} onPress={onPressHandler} />
     );
   };
+
   return (
     <FlatList
       data={CATEGORIES}
