@@ -1,11 +1,11 @@
 import { Text, View, StyleSheet } from 'react-native';
-import { useRoute } from '@react-navigation/native';
+
 import { MEALS } from '../data/dummy-data';
 
-const MealsOverviewScreen = () => {
+const MealsOverviewScreen = ({ route }) => {
   const {
     params: { categoryId },
-  } = useRoute();
+  } = route;
 
   return (
     <View style={styles.container}>
